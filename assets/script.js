@@ -21,7 +21,7 @@ const slides = [
 		tagLine:"Autocollants <span>avec découpe laser sur mesure</span>",
 	}
 ];
-/** pourquoi le span apparait ?*/
+/** pourquoi le span apparait ??*/
 
 //Les variables globales
 
@@ -29,12 +29,12 @@ const dots = document.querySelector(".dots"); /*recupere la div dots et créer u
 const arrowRight = document.querySelector(".arrow-right"); /*recupere la div arrow-right*/
 const arrowLeft = document.querySelector(".arrow-left"); /*recupere la div arrow-left*/
 const img = document.querySelector(".banner-img"); /*recupere la div banner-img*/
-const p = document.querySelector(".banner_txt"); /*recupere la div banner_txt*/
-	 												
+const p = document.querySelector(".banner_txt"); /*recupere la div banner_txt*/	
+const span = document.querySelector(".banner_txt span"); /*recupere la div banner_txt span*/										
 let index = 0;
 
 
-/*Fonction Main pour repertorier toutes les fonctions*/
+/*Fonction Main pour repertorier toutes les fonctions et faire plus propre*/
 function main(){
 	displayDots();
 	clickRight();
@@ -46,7 +46,7 @@ main(); /*ne pas oublier de lancer les classes*/
 
 
 
-//Affichage des dots
+//Affichage des dots (fonction displayDots)
 
 function displayDots(){
 for (let i = 0; i < slides.length; i++) {
@@ -76,6 +76,7 @@ function clickRight(){
 		arrayDots[index].classList.add("dot_selected");  /*ajoute la class dot_selected pour remplir les dots*/
 		img.src = slides[index].imageUrl;   /*recupere l'url de l'image*/
 p.textContent = slides[index].tagLine;   /*recupere le texte de l'image*/
+span.textContent = slides[index].tagLine;   /*recupere le texte de l'image*/
 
 	});
 
