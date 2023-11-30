@@ -29,9 +29,10 @@ const dots = document.querySelector(".dots"); /*recupere la div dots et créer u
 const arrowRight = document.querySelector(".arrow-right"); /*recupere la div arrow-right*/
 const arrowLeft = document.querySelector(".arrow-left"); /*recupere la div arrow-left*/
 const img = document.querySelector(".banner-img"); /*recupere la div banner-img*/
-const p = document.querySelector(".banner_txt"); /*recupere la div banner_txt*/	
-const span = document.querySelector(".banner_txt span"); /*recupere la div banner_txt span*/										
+const paragraphe = document.querySelector("p"); /*recupere la div banner_txt*/	
+
 let index = 0;
+
 
 
 /*Fonction Main pour repertorier toutes les fonctions et faire plus propre*/
@@ -49,12 +50,12 @@ main(); /*ne pas oublier de lancer les classes*/
 //Affichage des dots (fonction displayDots)
 
 function displayDots(){
-for (let i = 0; i < slides.length; i++) {
-	const dot = document.createElement("div");
-	dot.classList.add("dot");
-	dots.appendChild(dot);
-	if (i == index ){
-		dot.classList.add("dot_selected");
+for (let i = 0; i < slides.length; i++) {    /*variable i = 0, tant que i est inferieur à la longueur de mon tableau, i++*/
+	const dot = document.createElement("div"); /*créer une div pour l'element dot*/
+	dot.classList.add("dot"); /*ajoute la class dot à la div dot*/
+	dots.appendChild(dot);   /*ajoute la div dot à la div dots*/
+	if (i == index ){   /*si i est egal à l'index*/
+		dot.classList.add("dot_selected"); /*ajoute la class dot_selected à la div dot*/
 	}
 }
 }
@@ -66,6 +67,7 @@ for (let i = 0; i < slides.length; i++) {
 function clickRight(){
 	arrowRight.addEventListener("click", () => { /*ajout d'un evenement click*/  
 	/*bien faire attention à la syntaxe et à l'ordre*/
+	/*Array permet de creer un tableau*/
 		const arrayDots = document.querySelectorAll(".dots .dot");/*recupere tous les dots*/
 		arrayDots[index].classList.remove("dot_selected");/*supprime la class dot_selected pour pouvoir remplir les dots a chaque page*/
 		index++; /*permet de passer à la page suivante*/
@@ -75,8 +77,11 @@ function clickRight(){
 		}
 		arrayDots[index].classList.add("dot_selected");  /*ajoute la class dot_selected pour remplir les dots*/
 		img.src = slides[index].imageUrl;   /*recupere l'url de l'image*/
-p.textContent = slides[index].tagLine;   /*recupere le texte de l'image*/
-span.textContent = slides[index].tagLine;   /*recupere le texte de l'image*/
+        paragraphe.innerHTML = slides[index].tagLine;   /*recupere le texte de l'image
+		
+		
+		regarder documentation pour TextContent (il considere que cest du texte au lieu d une balise)
+		la solution etait innerHTML*/
 
 	});
 
@@ -98,7 +103,7 @@ function clickLeft(){
 		}
 		arrayDots[index].classList.add("dot_selected");
 		img.src = slides[index].imageUrl;
-p.textContent = slides[index].tagLine;
+        paragraphe.innerHTML = slides[index].tagLine;
 
 	});
 
