@@ -26,8 +26,8 @@ const slides = [
 //Les variables globales
 
 const dots = document.querySelector(".dots"); /*recupere la div dots et créer une constance*/
-const arrowRight = document.querySelector(".arrow-right"); /*recupere la div arrow-right*/
-const arrowLeft = document.querySelector(".arrow-left"); /*recupere la div arrow-left*/
+const arrowRight = document.querySelector(".arrow_right"); /*recupere la div arrow-right*/
+const arrowLeft = document.querySelector(".arrow_left"); /*recupere la div arrow-left*/
 const img = document.querySelector(".banner-img"); /*recupere la div banner-img*/
 const paragraphe = document.querySelector("p"); /*recupere la div banner_txt*/	
 
@@ -81,7 +81,7 @@ function clickRight(){
 		
 		
 		regarder documentation pour TextContent (il considere que cest du texte au lieu d une balise)
-		la solution etait innerHTML*/
+		la solution était innerHTML*/
 
 	});
 
